@@ -1,0 +1,32 @@
+username="<github_username>"
+token="<oauth_token>"
+
+github-create() {
+  repo_name=$1
+
+  dir_name=`basename $(pwd)`
+
+  if [ "$repo_name" = "" ]; then
+    echo "Repo name (hit enter to use '$dir_name')?"
+    read repo_name
+  fi
+
+  if [ "$repo_name" = "" ]; then
+    repo_name=$dir_name
+  else
+    mkdir -p "$repo_name"
+    cd "$repo_name"
+  fi
+
+  echo -n "Creating Github repository '$repo_name' ..."
+  curl -u "$username:$token" https://api.github.com/user/repos -d '{"name":"'$repo_name'"}'
+  echo " done."
+
+  git init
+  git remote add origin https://github.com/$username/$repo_name
+  git push -u origin master
+  echo "# $repo_name" >> README.md
+  git add README.md
+  git commit -m "Initial commit"
+  git push --set-upstream origin master
+}
