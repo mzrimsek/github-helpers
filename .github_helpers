@@ -25,7 +25,11 @@ github-create() {
   git init
   git remote add origin https://github.com/$username/$repo_name
   git push -u origin master
-  echo "# $repo_name" >> README.md
+  
+  if [ ! -f ./README.md ]; then
+    echo "# $repo_name" >> README.md
+  fi
+
   git add README.md
   git commit -m "Initial commit"
   git push --set-upstream origin master
