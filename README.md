@@ -15,9 +15,9 @@ mv .github_helpers ~/
   * `GITHUB_USER` with your github username
   * `GITHUB_TOKEN` with a Personal Access Token which you can [generate here](https://github.com/settings/tokens).
     * Permissions required are noted on each function
-Add each of these to your `.profile` or `.bashrc` file
+Add each of these to your `.bashrc` file
 
-3. Add the file to your `.profile` or `.bashrc` file
+3. Add the file to your `.bashrc` file
 ```
 if [ -f ~/.github_helpers ]; then
     . ~/.github_helpers
