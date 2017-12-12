@@ -8,8 +8,7 @@ Installation
 
 1. Run the following:
 ```
-git clone https://github.com/mzrimsek/github-helpers.git
-cd github-helpers
+wget https://raw.githubusercontent.com/mzrimsek/github-helpers/master/.github_helpers
 mv .github_helpers ~/
 ```
 2. Configure the file by replacing setting the following environment variables:
