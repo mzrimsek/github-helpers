@@ -12,18 +12,19 @@ git clone https://github.com/mzrimsek/github-helpers.git
 cd github-helpers
 mv .github_helpers ~/
 ```
-2. Configure the file by replacing the following:
-  * `<github_username>` with your github username
-  * `<oauth_token>` with a Personal Access Token which you can [generate here](https://github.com/settings/tokens).
+2. Configure the file by replacing setting the following environment variables:
+  * `GITHUB_USER` with your github username
+  * `GITHUB_TOKEN` with a Personal Access Token which you can [generate here](https://github.com/settings/tokens).
     * Permissions required are noted on each function
+Add each of these to your `.profile` or `.bashrc` file
 
-3. Add the file to your `.bashrc` or `.zshrc`
+3. Add the file to your `.profile` or `.bashrc` file
 ```
 if [ -f ~/.github_helpers ]; then
     . ~/.github_helpers
 fi
 ```
-4. Source your `.bashrc` or `.zshrc`
+4. Source your `.bashrc`
 
 Functions
 ------
