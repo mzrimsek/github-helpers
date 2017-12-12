@@ -1,5 +1,5 @@
-username="<github_username>"
-token="<oauth_token>"
+username="${GITHUB_USER}"
+token="${GITHUB_TOKEN}"
 
 github-create() {
   repo_name=$1
